@@ -1,0 +1,151 @@
+/* --- 全体の基本設定とフォント --- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- ヘッダー --- */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.header-logo a {
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+}
+
+.header-logo img {
+    height: 50px; /* 画像の高さを調整 */
+    vertical-align: middle;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* --- タブ切り替えリンク --- */
+.tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab-btn {
+    padding: 10px 0;
+    margin-right: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn.active {
+    border-bottom: 3px solid #333;
+}
+
+/* --- コンテンツエリア --- */
+.tab-content {
+    display: none;
+    padding-top: 40px;
+}
+.tab-content.active {
+    display: block;
+}
+#content-calendar h2 {
+    display: none;
+}
+
+/* --- 本日の混雑状況 --- */
+.today-header { display: flex; align-items: baseline; gap: 20px; margin-bottom: 20px; }
+.today-header .date { font-size: 18px; font-weight: 700; margin: 0;}
+.today-status-table { width: 100%; border-collapse: collapse; }
+.today-status-table th, .today-status-table td { border-top: 1px solid #eee; padding: 20px 10px; text-align: left; vertical-align: middle; }
+.today-status-table tr:last-child th, .today-status-table tr:last-child td { border-bottom: 1px solid #eee; }
+.today-status-table th { font-weight: 400; font-size: 14px; width: 120px; }
+.today-status-table td { display: flex; align-items: center; gap: 15px; font-size: 14px; }
+
+/* SVGアイコンのスタイル */
+.congestion-icon-svg { display: flex; gap: 2px; }
+.person-icon { width: 22px; height: 22px; }
+.person-icon .roof { fill: #c0c0c0; }
+.person-icon circle, .person-icon path { fill: currentColor; }
+.person-icon.faint { color: #e0e0e0; }
+.congestion-icon-svg.slow { color: #a2d7dd; }
+.congestion-icon-svg.normal { color: #00b0f0; }
+.congestion-icon-svg.crowded { color: #f5a127; }
+.congestion-icon-svg.very-crowded { color: #e60012; }
+
+.notice { font-size: 12px; color: #666; margin-top: 20px; }
+
+
+/* --- 混雑予想カレンダー --- */
+.calendar-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; font-size: 12px; }
+.calendar-legend div { display: flex; align-items: center; gap: 0.5rem; }
+.color-chip { display: inline-block; width: 1em; height: 1em; border: 1px solid rgba(0,0,0,0.1); }
+.months-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+.month { flex-shrink: 0; }
+.month h3 { font-size: 16px; font-weight: 700; text-align: center; margin-bottom: 10px; }
+.calendar-grid { width: 100%; border-collapse: separate; border-spacing: 5px; font-size: 13px; }
+.calendar-grid th { font-weight: 400; color: #333; padding-bottom: 5px; }
+.calendar-grid th.sun { color: #e60012; }
+.calendar-grid th.sat { color: #0070c0; }
+.calendar-grid td { text-align: center; padding: 10px 5px; font-weight: 700; color: #fff;}
+
+/* 日付と凡例の色分け */
+.calendar-grid td.very-crowded, .color-chip.very-crowded { background-color: #e60012; }
+.calendar-grid td.crowded, .color-chip.crowded { background-color: #f5a127; }
+.calendar-grid td.slow, .color-chip.slow { background-color: #a2d7dd; color: #333; }
+.calendar-grid td.closed, .color-chip.closed { background-color: #808080; }
+.calendar-grid td.normal, .color-chip.normal {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #eee;
+}
+
+/* --- フッター --- */
+.page-footer {
+    border-top: 1px solid #ddd;
+    margin-top: 60px;
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 13px;
+    color: #555;
+}
+.footer-logo { font-size: 24px; font-weight: 700; }
+.footer-info p, .footer-hours p { margin: 5px 0; }
+.footer-links { display: flex; gap: 10px; }
+.footer-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+    transition: background-color 0.2s;
+}
+.footer-btn:hover { background-color: #f0f0f0; }
