@@ -147,5 +147,66 @@ body {
     color: #333;
     font-size: 13px;
     transition: background-color 0.2s;
+
+    /* --- お知らせページ (news.html) のスタイル --- */
+.news-article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.news-header {
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+}
+
+.news-date {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.news-header h1 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.news-body {
+    font-size: 15px;
+    line-height: 2;
+}
+
+.news-map {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.news-map img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- お知らせへのリンクバナー --- */
+.news-link-banner {
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.news-link-banner a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.news-link-banner a:hover {
+    background-color: #f9f9f9;
+}
 }
 .footer-btn:hover { background-color: #f0f0f0; }
